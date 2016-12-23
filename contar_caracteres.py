@@ -7,17 +7,22 @@ def mostrar_entradas(caracteres, titulo = 'Letras'):
     
     '''Muestra con un formato de tabla, todas las entradas del usuario'''
 
-    # Formato
+    # Ordena los elementos del diccionario para presentarlos en orden
+    elementos = [(v, k) for k, v in caracteres.items()]
+    elementos.sort()
+    elementos.reverse() # El caracter con mayor ocurrencia al principio
+    caracteres = [(k, v) for v, k in elementos]
+
+    # Formato de presentacion
     ancho = 25
     print'~'*ancho
     print titulo.center(ancho,'~')
     print'~'*ancho
 
-
     print '~ {:<10s} ~ {:>8s} ~'.format('Letra','Num')
 
     # Recorremos todos los elementos del diccionario
-    for clave, valor in caracteres.iteritems():
+    for clave, valor in caracteres:
         print'~ {clave:10s} ~'.format(clave = clave),'{:>8} ~'.format(valor)
 
     print('~'*ancho)
@@ -43,5 +48,3 @@ if __name__=='__main__':
     archivo.close()
     # Muestra los resultados encontrados
     mostrar_entradas(caracteres)
-
-
