@@ -1,3 +1,7 @@
+"""
+Este programa recibe un archivo '.txt' y muestra una tabla con el 
+caracter y el numero de incidencias en el archivo.
+"""
 
 def mostrar_entradas(caracteres, titulo = 'Letras'):
     
