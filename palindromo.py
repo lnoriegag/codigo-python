@@ -1,9 +1,9 @@
-import re
-from unicodedata import normalize
 """
     Este programa recibe una cadena y verifica si es un palindromo o no
     Acepta palindromos con acento siempre y cuando la palabra inversa tenga acento. No acepta numeros
 """
+import re
+from unicodedata import normalize
 
 def entrada_valida(cadena):
     '''Valida si solo se ingresaron palabras sin numeros'''
